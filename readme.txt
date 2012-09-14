@@ -2,8 +2,8 @@
 Contributors: jimmywb, frankieroberto
 Tags: links, list, lists, widget
 Requires at least: 2.8
-Tested up to: 3.0.4
-Stable tag: 0.1
+Tested up to: 3.4.2
+Stable tag: 0.2
 
 This plugin makes a widget available which allows you to add a simple link list (bulleted or numbered) to a sidebar.
 
@@ -34,6 +34,10 @@ In addition you can add a custom style to the list items that will be added to t
 1. Widget editing interface.
 
 == Changelog ==
+
+= 0.2 =
+* Added a Delete functionality to link items
+* Added the ability to open link in new window
 
 = 0.1 =
 * Initial upload
