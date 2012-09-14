@@ -3,7 +3,7 @@
 Plugin Name: Simple Link List Widget
 Description: Enables a link list widget, in which you can display items in an ordered or unordered list.  Based on Frankie Roberto's List Widget
 Author: James Bowles
-Author URI: http://mesacc.edu/~jamul76751
+Author URI: http://mesacc.edu/~chago
 Version: 0.1
 */
 
