@@ -4,7 +4,7 @@ Plugin Name: Simple Link List Widget
 Description: Enables a link list widget, in which you can display items in an ordered or unordered list.  Based on Frankie Roberto's List Widget
 Author: James Bowles
 Author URI: http://mesacc.edu/~jamul76751
-Version: 0.1.1
+Version: 0.1
 */
 
 class SimpleLinkListWidget extends WP_Widget {
@@ -23,8 +23,7 @@ class SimpleLinkListWidget extends WP_Widget {
 		for ($i = 1; $i <= $amount; $i++) {
 			$items[$i] = $instance['item' . $i];
 			$item_links[$i] = $instance['item_link' . $i];
-			$item_classes[$i] = $instance['item_class' . $i];	
-			$item_targets[$i] = $instance['item_target' . $i];
+			$item_classes[$i] = $instance['item_class' . $i];
 		}
 
 		echo $before_widget .  $before_title . $title . $after_title;  ?>
@@ -35,11 +34,7 @@ class SimpleLinkListWidget extends WP_Widget {
 						if (empty($item_links[$num])) :
 							echo("<li class='" . $item_classes[$num] . "'>" . $item . "</li>");
 						else :
-							if($item_targets[$num]) :
-								echo("<li class='" . $item_classes[$num] . "'><a href='" . $item_links[$num] . "' target='_blank'>" . $item . "</a></li>");
-							else :
-								echo("<li class='" . $item_classes[$num] . "'><a href='" . $item_links[$num] . "'>" . $item . "</a></li>");
-							endif;
+							echo("<li class='" . $item_classes[$num] . "'><a href='" . $item_links[$num] . "'>" . $item . "</a></li>");
 						endif;
 					endif;
 				 endforeach; ?>
@@ -62,7 +57,6 @@ class SimpleLinkListWidget extends WP_Widget {
 			$instance['item' . $i] = strip_tags($new_instance['item' . $i]);
 			$instance['item_link' . $i] = $new_instance['item_link' . $i];
 			$instance['item_class' . $i] = strip_tags($new_instance['item_class' . $i]);
-			$instance['item_target' . $i] = $new_instance['item_target' . $i];
 		}		
 		$instance['type'] = $new_instance['type'];
 		
@@ -78,8 +72,6 @@ class SimpleLinkListWidget extends WP_Widget {
 			$items[$i] = $instance['item' . $i];
 			$item_links[$i] = $instance['item_link' . $i];
 			$item_classes[$i] = $instance['item_class' . $i];
-			echo $item_targets[$i];
-			$item_targets[$i] = $instance['item_target' . $i];
 		}
 		$title_link = $instance['title_link'];		
 		$type = empty($instance['type']) ? 'unordered' : $instance['type'] ;
@@ -98,7 +90,6 @@ class SimpleLinkListWidget extends WP_Widget {
 				<input class="widefat" id="<?php echo $this->get_field_id('item_link' . $num); ?>" name="<?php echo $this->get_field_name('item_link' . $num); ?>" type="text" value="<?php echo esc_attr($item_links[$num]); ?>" />
 				<label for="<?php echo $this->get_field_id('item_class' . $num); ?>">Custom Style Class:</label>
 				<input class="widefat" id="<?php echo $this->get_field_id('item_class' . $num); ?>" name="<?php echo $this->get_field_name('item_class' . $num); ?>" type="text" value="<?php echo esc_attr($item_classes[$num]); ?>" />
-                <label for="<?php echo $this->get_field_id('item_target'); ?>"><input type="checkbox" name="<?php echo $this->get_field_name('item_target'); ?>" value="_blank" id="<?php echo $this->get_field_id('item_target'); ?>" <?php checked($item_targets[$num], '_blank'); ?>></input>  Open in new window</label>
 			</li>
 		<?php endforeach; ?>
 		
@@ -111,7 +102,6 @@ class SimpleLinkListWidget extends WP_Widget {
 				<input class="widefat" id="<?php echo $this->get_field_id('item_link' . $new_amount); ?>" name="<?php echo $this->get_field_name('item_link' . $new_amount); ?>" type="text" value="" />
 				<label for="<?php echo $this->get_field_id('item_class' . $new_amount); ?>">Custom Style Class:</label>
 				<input class="widefat" id="<?php echo $this->get_field_id('item_class' . $new_amount); ?>" name="<?php echo $this->get_field_name('item_class' . $new_amount); ?>" type="text" value="" />
-                <label for="<?php echo $this->get_field_id('item_target'); ?>"><input type="checkbox" name="<?php echo $this->get_field_name('item_target'); ?>" value="_blank" id="<?php echo $this->get_field_id('item_target'); ?>"></input>  Open in new window</label>
 			</li>
 		</ol>
 		<input type="hidden" id="<?php echo $this->get_field_id('amount'); ?>" name="<?php echo $this->get_field_name('amount'); ?>" value="<?php echo $amount ?>" />
