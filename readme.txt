@@ -1,9 +1,9 @@
 === Simple Link List Widget ===
-Contributors: jimmywb, frankieroberto
+Contributors: jimmywb
 Tags: links, list, lists, widget
 Requires at least: 2.8
-Tested up to: 3.4.2
-Stable tag: 0.2
+Tested up to: 3.9
+Stable tag: 0.3
 
 This plugin makes a widget available which allows you to add a simple link list (bulleted or numbered) to a sidebar.
 
@@ -31,9 +31,16 @@ In addition you can add a custom style to the list items that will be added to t
 
 == Screenshots ==
 
-1. Widget editing interface.
+1. Widget editing interface with closed items.
+2. Widget editing interface with open item.
 
 == Changelog ==
+= 0.3 =
+* Added drag and drop support
+* Added the ability to add unlimited items without resaving
+* Added reverse output option
+* Added support for Accessibility mode
+* Added admin interface styles
 
 = 0.2 =
 * Added a Delete functionality to link items
