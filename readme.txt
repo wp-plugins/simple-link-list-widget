@@ -13,7 +13,7 @@ Install this plugin in the usual way, by downloading and unzipping the folder in
 
 The plugin then needs to be activated before it can be used.
 
-To use, simply drag the 'List' widget into a sidebar. To use the widget, your theme must be widget-enabled.
+To use, simply drag the 'Simple Link List' widget into a sidebar. To use the widget, your theme must be widget-enabled.
 
 == Frequently Asked Questions ==
 
