@@ -4,7 +4,7 @@ Plugin Name: Simple Link List Widget
 Description: Enables a link list widget, in which you can display items in an ordered or unordered list.
 Author: James Bowles
 Author URI: http://thebowles.org
-Version: 0.3
+Version: 0.3.1
 */
 
 class SimpleLinkListWidget extends WP_Widget {
@@ -89,7 +89,10 @@ class SimpleLinkListWidget extends WP_Widget {
 		}else{
 			$order = explode(',',$new_instance['order']);
 			foreach($order as $key => $order_str){
-				$order[$key] = substr($order_str,-1);
+				$num = strrpos($order_str,'-');
+				if($num !== false){
+					$order[$key] = substr($order_str,$num+1);
+				}
 			}
 		}
 		

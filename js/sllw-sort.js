@@ -52,7 +52,7 @@ function sllwSetupHandlers($){
 		
 		var item = sllw.find('.simple-link-list .list-item:last-child').clone();
 		var item_id = item.attr('id');
-		item.attr('id',item_id.substring(0,item_id.length-1)+num);
+		item.attr('id',increment_last_num(item_id));
 
 		$('.toggled-off',item).removeClass('toggled-off');
 		$('.number',item).html(num);
@@ -60,14 +60,14 @@ function sllwSetupHandlers($){
 		
 		$('label',item).each(function() {
 			var for_val = $(this).attr('for');
-			$(this).attr('for',for_val.substring(0,for_val.length-1)+num);
+			$(this).attr('for',increment_last_num(for_val));
 		});
 		
 		$('input',item).each(function() {
 			var id_val = $(this).attr('id');
 			var name_val = $(this).attr('name');
-			$(this).attr('id',id_val.substring(0,id_val.length-1)+num);
-			$(this).attr('name',name_val.substring(0,name_val.length-2)+num+"]");
+			$(this).attr('id',increment_last_num(id_val));
+			$(this).attr('name',increment_last_num(name_val));
 			if($(':checked',this)){
 			   $(this).removeAttr('checked');
 			}
@@ -81,6 +81,12 @@ function sllwSetupHandlers($){
 	$('body').on('click.sllw','.moving-handle', function() {
 		$(this).parent().find('.sllw-edit-item').slideToggle(200);
 	} );
+}
+
+function increment_last_num(v) {
+    return v.replace(/[0-9]+(?!.*[0-9])/, function(match) {
+        return parseInt(match, 10)+1;
+    });
 }
 
 function updateOrder(self){

@@ -3,7 +3,7 @@ Contributors: jimmywb
 Tags: links, list, lists, widget
 Requires at least: 2.8
 Tested up to: 3.9
-Stable tag: 0.3
+Stable tag: 0.3.1
 
 This plugin makes a widget available which allows you to add a simple link list (bulleted or numbered) to a sidebar.
 
@@ -13,7 +13,7 @@ Install this plugin in the usual way, by downloading and unzipping the folder in
 
 The plugin then needs to be activated before it can be used.
 
-To use, simply drag the 'Simple Link List' widget into a sidebar. To use the widget, your theme must be widget-enabled.
+To use, simply drag the 'List' widget into a sidebar. To use the widget, your theme must be widget-enabled.
 
 == Frequently Asked Questions ==
 
@@ -35,6 +35,9 @@ In addition you can add a custom style to the list items that will be added to t
 2. Widget editing interface with open item.
 
 == Changelog ==
+= 0.3.1 =
+* Fixed bug that limited the number of items to 9
+
 = 0.3 =
 * Added drag and drop support
 * Added the ability to add unlimited items without resaving
