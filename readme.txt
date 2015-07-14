@@ -1,8 +1,9 @@
 === Simple Link List Widget ===
 Contributors: jimmywb
+Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=P7A2CAYYZDDPL
 Tags: links, list, lists, widget
 Requires at least: 2.8
-Tested up to: 3.9
+Tested up to: 4.2
 Stable tag: 0.3.1
 
 This plugin makes a widget available which allows you to add a simple link list (bulleted or numbered) to a sidebar.
